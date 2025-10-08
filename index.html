@@ -6,6 +6,7 @@
     <title>Mariam Fawzy</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* أنماط CSS */
         * {
             margin: 0;
             padding: 0;
@@ -16,7 +17,7 @@
         body {
             background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
             color: #333;
-            line-height: 1;
+            line-height: 1.6;
             padding: 20px;
             min-height: 100vh;
         }
@@ -28,8 +29,15 @@
         
         header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: -30px;
             color: white;
+            /* **تعديل أساسي: جعل الهيدر حاوية مرجعية للزر المطلق** */
+            position: relative;
+            /* لضمان رؤية الزر فوق أي عناصر في الهيدر */
+            z-index: 10;
+            /* لجعل الهيدر لا يقتطع الزر عند تحريكه */
+            overflow: visible; 
+            padding-bottom: 50px; /* لضمان وجود مساحة كافية للزر أسفل الهيدر */
         }
         
         h1 {
@@ -37,6 +45,50 @@
             margin-bottom: 10px;
         }
         
+        /* ... (باقي الأنماط لم تتغير - تم حذفها هنا للاختصار) ... */
+        
+        /* أنماط زر التشغيل القابل للسحب (Drag-and-Drop) الجديدة */
+        .play-button {
+            /* **تعديل أساسي: موضع مطلق داخل الهيدر** */
+            position: absolute; 
+            /* موقع افتراضي للزر (زاوية الهيدر اليسرى السفلية) */
+            bottom: 0px; 
+            left: 20px; 
+            
+            width: 60px;
+            height: 60px;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            /* **تعديل: إضافة خاصية "cursor: move" للدلالة على إمكانية السحب** */
+            cursor: move; 
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 1001; /* أعلى من بقية العناصر */
+        }
+        /* تعطيل التحديد أثناء السحب */
+        .play-button:active {
+             user-select: none;
+        }
+
+        .play-button:hover {
+            background: #cc4f4f;
+            transform: scale(1.05);
+        }
+
+        /* تعديل للمحاذاة في وضع RTL للزر المطلق */
+        html[dir="rtl"] .play-button {
+            left: auto;
+            right: 305px; /* موقع افتراضي لليمين في وضع RTL */
+        }
+
+        /* ... (باقي الأنماط لم تتغير) ... */
+
         .profile-container {
             display: flex;
             flex-direction: column;
@@ -130,7 +182,7 @@
         
         .skills-list {
             display: grid;
-            flex-wrap: wrap;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 10px;
             margin-top: 15px;
         }
@@ -142,6 +194,7 @@
             font-size: 0.9rem;
             color: #2575fc;
             border: 1px solid #d0e2ff;
+            text-align: center;
         }
         
         .interests-list {
@@ -172,60 +225,60 @@
             padding: 20px;
             font-size: 0.9rem;
         }
+
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Mariam Fawzy</h1>
-           
+            <h1>Mariam fawzy</h1>
+            
+            <button id="playButton" class="play-button" title="تشغيل الموسيقى">
+                <i class="fas fa-play"></i>
+            </button>
+
         </header>
         
         <div class="profile-container">
             <div class="profile-sidebar">
-                <!-- بطاقة المعلومات الشخصية -->
                 <div class="profile-card">
                     <h2 class="card-title">المعلومات الشخصية</h2>
                     <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEic1WgArj_IGV1KA1AVXs1RQOXyHqcyaWF6YG_Aa1XOnJq2ycGdnr-zIsUgvlOmGZYGXIz07llrXtjkd2D-WgnXplkgGW4tF8Z_R3D7BpYqiwLWKvcwn0pvAiN3ylZm2JdCnsFOCzaWyQaMBWa7BX3KS2oYE7hWxDsTWjSKLSx2PtXlgKUqhwxtXGIDiwbT/s320/66.jpg" alt="صورة البروفايل" class="profile-img">
                     
                     <div class="info-item">
                         <i class="fas fa-user"></i>
-                        <span><strong>الاسم:</strong> مريم فوزي </span>
+                        <span><strong>الاسم:</strong> مريم فوزي</span>
                     </div>
                     
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span><strong>محل   الميلاد
-                        :</strong> القاهرة، مصر</span>
+                        <span><strong>محل الميلاد:</strong> القاهرة، مصر</span>
                     </div>
                     
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
-                        <span><strong>البريد 
-                        :</strong> mariamfawzy@gmail.com</span>
+                        <span><strong>البريد:</strong> mariamfawzy@gmail.com</span>
                     </div>
                     
                     <div class="info-item">
                         <i class="fas fa-phone"></i>
-                        <span><strong>رقم الهاتف
-                        :</strong> 01012312356</span>
+                        <span><strong>رقم الهاتف:</strong> 01012312356</span>
                     </div>
                 </div>
                 
-                <!-- بطاقة وسائل التواصل الاجتماعي -->
                 <div class="profile-card">
                     <h2 class="card-title">وسائل التواصل الاجتماعي</h2>
                     <div class="social-links">
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="انستجرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon" title="سناب شات"><i class="fab fa-snapchat-ghost"></i></a>
+                        <a href="#" class="social-icon" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                    </div>
                 </div>
             </div>
             
             <div class="profile-main">
-                <!-- بطاقة المعلومات الأكاديمية -->
                 <div class="profile-card">
                     <h2 class="card-title">المعلومات الأكاديمية</h2>
                     
@@ -255,7 +308,6 @@
                     </div>
                 </div>
                 
-                <!-- بطاقة المهارات -->
                 <div class="profile-card">
                     <h2 class="card-title">المهارات</h2>
                     
@@ -271,7 +323,6 @@
                     </div>
                 </div>
                 
-                <!-- بطاقة الاهتمامات -->
                 <div class="profile-card">
                     <h2 class="card-title">الاهتمامات</h2>
                     
@@ -314,6 +365,156 @@
             <p>© 2023 جميع الحقوق محفوظة | تم تصميم هذه الصفحة باستخدام HTML و CSS</p>
         </footer>
     </div>
+
+    <audio id="backgroundMusic" src="https://raw.githubusercontent.com/khedmapodcast-cpu/mariamfawzy-id/refs/heads/main/%D8%B4%D8%A7%D9%84%D9%84%D9%87%20%D9%8A%D8%A7%D8%B9%D8%B0%D8%B1%D8%A7%D8%A1%20%D9%8A%D8%A7%D8%A7%D9%85%20%D8%A7%D9%84%D9%86%D9%88%D8%B1.mp3"></audio>
+
+    <script>
+        const audio = document.getElementById('backgroundMusic');
+        const button = document.getElementById('playButton');
+        const icon = button.querySelector('i');
+        const header = document.querySelector('header');
+        
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+
+        // **دالة تشغيل وإيقاف الموسيقى (لم تتغير)**
+        button.addEventListener('click', () => {
+            if (isDragging) {
+                // منع تشغيل/إيقاف الموسيقى إذا كانت الحركة مجرد نهاية سحب
+                isDragging = false;
+                return;
+            }
+
+            if (audio.paused) {
+                audio.play().then(() => {
+                    icon.classList.remove('fa-play');
+                    icon.classList.add('fa-pause');
+                    button.title = "إيقاف الموسيقى مؤقتاً";
+                }).catch(error => {
+                    console.error("فشل تشغيل الصوت:", error);
+                    alert("تعذّر تشغيل الملف الصوتي من GitHub. يرجى التأكد من أنك قمت بنسخ رابط Raw الصحيح للملف.");
+                });
+            } else {
+                audio.pause();
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                button.title = "تشغيل الموسيقى";
+            }
+        });
+
+        // لتغيير الأيقونة إلى "تشغيل" عند انتهاء الأغنية
+        audio.onended = () => {
+            icon.classList.remove('fa-pause');
+            icon.classList.add('fa-play');
+            button.title = "تشغيل الموسيقى";
+        };
+
+
+        // ############# وظائف السحب والإفلات (Drag-and-Drop) #############
+
+        // 1. بدء السحب (الماوس واللمس)
+        function startDrag(e) {
+            // منع السحب عند الضغط على زر الماوس الأيمن أو الأوسط
+            if (e.button && e.button !== 0) return; 
+
+            isDragging = false;
+            
+            // تحديد إحداثيات البداية بناءً على ما إذا كان ماوس أم لمس
+            if (e.type === 'mousedown') {
+                startX = e.clientX;
+                startY = e.clientY;
+            } else if (e.type === 'touchstart') {
+                startX = e.touches[0].clientX;
+                startY = e.touches[0].clientY;
+            }
+
+            // الموضع الأولي للزر بالنسبة لحاوية الهيدر
+            initialX = button.offsetLeft;
+            initialY = button.offsetTop;
+            
+            // إضافة مستمعين للحركة والإفلات
+            if (e.type === 'mousedown') {
+                document.addEventListener('mousemove', drag);
+                document.addEventListener('mouseup', endDrag);
+            } else if (e.type === 'touchstart') {
+                document.addEventListener('touchmove', drag);
+                document.addEventListener('touchend', endDrag);
+            }
+            
+            // تعطيل الانتقال (Transition) أثناء السحب
+            button.style.transition = 'none';
+        }
+
+        // 2. الحركة أثناء السحب (الماوس واللمس)
+        function drag(e) {
+            if (!startX) return; 
+
+            let currentX, currentY;
+            if (e.type === 'mousemove') {
+                currentX = e.clientX;
+                currentY = e.clientY;
+            } else if (e.type === 'touchmove') {
+                currentX = e.touches[0].clientX;
+                currentY = e.touches[0].clientY;
+            }
+            
+            // حساب الفرق بين نقطة البداية ونقطة الحركة الحالية
+            const dx = currentX - startX;
+            const dy = currentY - startY;
+
+            // إذا تحرك الزر بمسافة كافية، نعتبرها عملية سحب
+            if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+                isDragging = true;
+            }
+            
+            // حساب الموضع الجديد
+            let newX = initialX + dx;
+            let newY = initialY + dy;
+
+            // تحديد حدود الحركة داخل الهيدر
+            const headerRect = header.getBoundingClientRect();
+            const buttonRect = button.getBoundingClientRect();
+
+            // الحد الأدنى والأقصى للإحداثي الأفقي
+            const minX = 0;
+            const maxX = headerRect.width - buttonRect.width;
+            
+            // الحد الأدنى والأقصى للإحداثي العمودي
+            const minY = 0;
+            const maxY = headerRect.height - buttonRect.height;
+            
+            // تطبيق القيود
+            newX = Math.max(minX, Math.min(newX, maxX));
+            newY = Math.max(minY, Math.min(newY, maxY));
+
+            // تطبيق الموضع الجديد
+            button.style.left = `${newX}px`;
+            button.style.top = `${newY}px`;
+            button.style.right = 'auto'; // لإلغاء خاصية right في وضع RTL أثناء السحب
+
+            e.preventDefault(); // منع السلوك الافتراضي للمتصفح (مثل التمرير عند اللمس)
+        }
+
+        // 3. إنهاء السحب (الماوس واللمس)
+        function endDrag() {
+            // إزالة مستمعين الأحداث
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', endDrag);
+            document.removeEventListener('touchmove', drag);
+            document.removeEventListener('touchend', endDrag);
+            
+            // إعادة تفعيل الانتقال (Transition)
+            button.style.transition = 'background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease';
+
+            // إعادة تعيين متغيرات البداية
+            startX = null; 
+            startY = null; 
+        }
+
+        // إضافة مستمعي الأحداث لبدء السحب
+        button.addEventListener('mousedown', startDrag);
+        button.addEventListener('touchstart', startDrag);
+
+    </script>
 </body>
 </html>
-
