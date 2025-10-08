@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mariam Fawzy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        @media (min-width: 768px) {
+            .profile-container {
+                flex-direction: row;
+            }
+            
+            .profile-sidebar {
+                flex: 1;
+            }
+            
+            .profile-main {
+                flex: 2;
+            }
+        }
+        
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-title {
+            font-size: 1.5rem;
+            color: #2575fc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #2575fc;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        
+        .info-item {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-item i {
+            width: 30px;
+            color: #2575fc;
+            font-size: 1.2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #2575fc;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: scale(1.1);
+            background: #6a11cb;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill {
+            background: #eef5ff;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2575fc;
+            border: 1px solid #d0e2ff;
+        }
+        
+        .interests-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .interest {
+            background: #fff5f5;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #ff6b6b;
+        }
+        
+        .interest i {
+            font-size: 1.5rem;
+            color: #ff6b6b;
+            margin-bottom: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: white;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mariam Fawzy</h1>
+           
+        </header>
+        
+        <div class="profile-container">
+            <div class="profile-sidebar">
+                <!-- بطاقة المعلومات الشخصية -->
+                <div class="profile-card">
+                    <h2 class="card-title">المعلومات الشخصية</h2>
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEic1WgArj_IGV1KA1AVXs1RQOXyHqcyaWF6YG_Aa1XOnJq2ycGdnr-zIsUgvlOmGZYGXIz07llrXtjkd2D-WgnXplkgGW4tF8Z_R3D7BpYqiwLWKvcwn0pvAiN3ylZm2JdCnsFOCzaWyQaMBWa7BX3KS2oYE7hWxDsTWjSKLSx2PtXlgKUqhwxtXGIDiwbT/s320/66.jpg" alt="صورة البروفايل" class="profile-img">
+                    
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <span><strong>الاسم:</strong> مريم فوزي </span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><strong>محل   الميلاد
+                        :</strong> القاهرة، مصر</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span><strong>البريد الإلكتروني
+                        :</strong> mariamfawzy@gmil.com</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span><strong>رقم الهاتف
+                        :</strong> 01012312356</span>
+                    </div>
+                </div>
+                
+                <!-- بطاقة وسائل التواصل الاجتماعي -->
+                <div class="profile-card">
+                    <h2 class="card-title">وسائل التواصل الاجتماعي</h2>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-snapchat-ghost"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                     
+                </div>
+            </div>
+            
+            <div class="profile-main">
+                <!-- بطاقة المعلومات الأكاديمية -->
+                <div class="profile-card">
+                    <h2 class="card-title">المعلومات الأكاديمية</h2>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-university"></i>
+                        <span><strong>الجامعة:</strong> جامعة القاهرة</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span><strong>الكلية:</strong> كلية الحقوق</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><strong>الفرقة:</strong> الرابعة</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-book"></i>
+                        <span><strong>التخصص:</strong> القانون المدني</span>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-star"></i>
+                        <span><strong>المعدل التراكمي:</strong> 3.7 / 4.0</span>
+                    </div>
+                </div>
+                
+                <!-- بطاقة المهارات -->
+                <div class="profile-card">
+                    <h2 class="card-title">المهارات</h2>
+                    
+                    <div class="skills-list">
+                        <span class="skill">البحث القانوني</span>
+                        <span class="skill">صياغة العقود</span>
+                        <span class="skill">المرافعات الشفهية</span>
+                        <span class="skill">التحليل النقدي</span>
+                        <span class="skill">اللغة الإنجليزية</span>
+                        <span class="skill">الحاسب الآلي</span>
+                        <span class="skill">التفاوض</span>
+                        <span class="skill">الوساطة</span>
+                    </div>
+                </div>
+                
+                <!-- بطاقة الاهتمامات -->
+                <div class="profile-card">
+                    <h2 class="card-title">الاهتمامات</h2>
+                    
+                    <div class="interests-list">
+                        <div class="interest">
+                            <i class="fas fa-book"></i>
+                            <p>القراءة</p>
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fas fa-pen-fancy"></i>
+                            <p>الكتابة</p>
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fas fa-basketball-ball"></i>
+                            <p>الرياضة</p>
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fas fa-globe-africa"></i>
+                            <p>السفر</p>
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fas fa-music"></i>
+                            <p>الموسيقى</p>
+                        </div>
+                        
+                        <div class="interest">
+                            <i class="fas fa-laptop-code"></i>
+                            <p>التقنية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2023 جميع الحقوق محفوظة | تم تصميم هذه الصفحة باستخدام HTML و CSS</p>
+        </footer>
+    </div>
+</body>
+</html>
